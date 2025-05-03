@@ -1,0 +1,5 @@
+# bsp / float
+yabai -m config layout bsp
+
+# focus follows mouse settings
+yabai -m config focus_follows_mouse autofocus
