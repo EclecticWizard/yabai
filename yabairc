@@ -1,3 +1,13 @@
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# .. more yabai startup stuff
+# Detect sketchybar
+yabai -m config external_bar all:$(sketchybar --query bar | jq .height):0
+
 # bsp / float
 yabai -m config layout bsp
 
@@ -6,7 +16,7 @@ yabai -m config focus_follows_mouse autofocus
 
 # Set window borders 
 yabai -m config window_border on
-yabai -m config window_border on | off
+#yabai -m config window_border on | off
 yabai -m config window_border_width 6
 yabai -m config active_window_border_color 0xff775759
 yabai -m config normal_window_border_color 0xff555555
